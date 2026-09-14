@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Diseño y desarrollo de páginas web rápidas para restaurantes, tiendas y negocios de servicios en Ecuador. Cotiza tu proyecto con OwnSpot Studio.">
+  <meta name="theme-color" content="#101513">
+  <title>OwnSpot Studio | Páginas web para negocios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#101513; --ink-2:#172f3b; --paper:#f3f0e9; --gold:#eba640;
+      --coral:#c85b40; --sage:#8db293; --muted:rgba(243,240,233,.7);
+      --line:rgba(243,240,233,.14); --display:'Anton',sans-serif;
+      --body:'Work Sans',sans-serif; --mono:'IBM Plex Mono',monospace;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:82px}
+    body{background:var(--ink);color:var(--paper);font-family:var(--body);line-height:1.6;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input,textarea,select{font:inherit}
+    .wrap{width:min(1120px,calc(100% - 48px));margin:auto}
+    .skip{position:fixed;left:16px;top:-80px;background:var(--paper);color:var(--ink);padding:10px 14px;z-index:100}
+    .skip:focus{top:12px}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(16,32,42,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{font-family:var(--display);font-size:1.55rem;letter-spacing:.02em;display:flex;align-items:center;gap:11px}
+    .brand-dot{width:11px;height:11px;background:var(--gold);border-radius:2px;transform:rotate(45deg)}
+    .nav-links{display:flex;gap:28px;font-size:.94rem;font-weight:600}
+    .nav-links a{color:var(--muted)}
+    .nav-links a:hover,.nav-links a:focus-visible{color:var(--paper)}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid transparent;border-radius:4px;padding:13px 22px;font-weight:700;cursor:pointer;transition:.2s ease}
+    .button:hover{transform:translateY(-2px)}
+    .button-primary{background:var(--gold);color:var(--ink)}
+    .button-outline{border-color:var(--line);background:transparent;color:var(--paper)}
+    .button-outline:hover{border-color:rgba(243,240,233,.42);background:rgba(243,240,233,.05)}
+
+    .hero{padding:105px 0 78px;position:relative}
+    .hero::after{content:'';position:absolute;width:520px;height:520px;right:-240px;top:-160px;border:1px solid rgba(235,166,64,.2);border-radius:50%;box-shadow:0 0 0 85px rgba(235,166,64,.025),0 0 0 170px rgba(235,166,64,.02);pointer-events:none}
+    .eyebrow,.section-tag{font-family:var(--mono);font-size:.78rem;letter-spacing:.11em;text-transform:uppercase;color:var(--gold)}
+    .eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:22px}
+    .eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+    h1,h2{font-family:var(--display);font-weight:400;line-height:1}
+    h1{font-size:clamp(3rem,7vw,5.5rem);max-width:920px;letter-spacing:-.015em}
+    h1 .accent{color:var(--gold)}
+    .hero-copy{font-size:1.15rem;max-width:640px;color:var(--muted);margin-top:27px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+    .proofbar{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:68px;border:1px solid var(--line);background:var(--line)}
+    .proof{background:var(--ink);padding:22px 24px}
+    .proof strong{display:block;font-family:var(--display);font-size:1.9rem;font-weight:400}
+    .proof span{font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.04em}
+
+    section{padding:92px 0;border-top:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:end;margin-bottom:46px}
+    h2{font-size:clamp(2.5rem,5vw,4rem);margin-top:12px}
+    .section-desc{color:var(--muted);font-size:1.04rem;max-width:550px}
+
+    .portfolio{display:grid;gap:34px}
+    .project{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);background:var(--ink-2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    .project:nth-child(even){grid-template-columns:minmax(260px,.55fr) minmax(0,1.45fr)}
+    .project:nth-child(even) .project-shot{order:2}
+    .project-shot{background:#091217;min-height:350px;overflow:hidden}
+    .project-shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+    .project-info{padding:38px;display:flex;flex-direction:column;justify-content:center}
+    .project-type{font-family:var(--mono);font-size:.72rem;color:var(--gold);text-transform:uppercase;letter-spacing:.08em}
+    .project-info h3{font-size:1.5rem;margin:10px 0 13px}
+    .project-info p{color:var(--muted);font-size:.94rem}
+    .project-list{list-style:none;margin-top:20px;display:grid;gap:8px;font-size:.88rem}
+    .project-list li::before{content:'✓';color:var(--gold);margin-right:9px}
+    .project-note{font-size:.75rem;color:rgba(243,240,233,.5);margin-top:20px}
+
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service{padding:29px;background:var(--ink-2);border:1px solid var(--line);border-radius:9px}
+    .service-num{font-family:var(--mono);font-size:.75rem;color:var(--gold)}
+    .service h3{margin:17px 0 9px;font-size:1.1rem}
+    .service p{color:var(--muted);font-size:.9rem}
+
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+    .step{padding:28px;border-right:1px solid var(--line)}
+    .step:last-child{border:0}
+    .step strong{font-family:var(--display);font-size:2.2rem;font-weight:400;color:rgba(243,240,233,.2)}
+    .step small{display:block;font-family:var(--mono);color:var(--sage);margin:8px 0 15px}
+    .step h3{font-size:1rem;margin-bottom:7px}
+    .step p{font-size:.86rem;color:var(--muted)}
+
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .price{padding:31px 27px;background:var(--ink-2);border:1px solid var(--line);border-radius:9px;display:flex;flex-direction:column;position:relative}
+    .price.featured{border-color:var(--gold)}
+    .badge{position:absolute;right:20px;top:-12px;background:var(--gold);color:var(--ink);font-family:var(--mono);font-size:.68rem;padding:5px 10px;border-radius:3px}
+    .price h3{font-family:var(--display);font-size:1.5rem;font-weight:400}
+    .amount{font-family:var(--display);font-size:2.6rem;color:var(--gold);margin:12px 0}
+    .amount span{font-family:var(--body);font-size:.82rem;color:var(--muted)}
+    .price ul{list-style:none;margin:12px 0 27px;flex:1}
+    .price li{padding:8px 0;border-bottom:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+    .price-note{margin-top:18px;color:var(--muted);font-size:.84rem;text-align:center}
+
+    .about{display:grid;grid-template-columns:.75fr 1.25fr;gap:55px;align-items:start}
+    .about-card{background:var(--gold);color:var(--ink);padding:34px;border-radius:9px}
+    .about-mark{font-family:var(--display);font-size:4rem;line-height:1}
+    .about-card p{margin-top:18px;font-weight:600}
+    .about-copy p{color:var(--muted);font-size:1.05rem;margin-top:18px}
+
+    .contact-box{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:46px}
+    .contact-list{display:grid;gap:12px;margin-top:28px}
+    .contact-link{display:block;padding:13px 15px;border:1px solid var(--line);border-radius:5px;color:var(--muted);font-size:.9rem}
+    .contact-link:hover{border-color:var(--gold);color:var(--paper)}
+    .contact-link small{display:block;font-family:var(--mono);font-size:.65rem;color:var(--gold);text-transform:uppercase}
+    .field{margin-bottom:16px}
+    .field label{display:block;font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-bottom:7px;text-transform:uppercase;letter-spacing:.05em}
+    .field input,.field textarea,.field select{width:100%;background:rgba(0,0,0,.2);border:1px solid var(--line);border-radius:5px;padding:13px 14px;color:var(--paper)}
+    .field select option{color:#111}
+    .field textarea{min-height:110px;resize:vertical}
+    .field input:focus,.field textarea:focus,.field select:focus{outline:2px solid var(--gold);outline-offset:2px;border-color:transparent}
+    .form-note{font-size:.76rem;color:rgba(243,240,233,.52);margin-top:12px}
+    footer{padding:38px 0;border-top:1px solid var(--line)}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:rgba(243,240,233,.5);font-size:.85rem}
+    .float-wa{position:fixed;right:22px;bottom:22px;z-index:40;background:#25d366;color:#fff;width:58px;height:58px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+    .float-wa svg{width:31px;height:31px;fill:currentColor}
+
+    @media(max-width:850px){
+      .nav-links{display:none}.section-head,.about,.contact-box{grid-template-columns:1fr}.project,.project:nth-child(even){grid-template-columns:1fr}.project:nth-child(even) .project-shot{order:0}.services,.pricing{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step{border-bottom:1px solid var(--line)}
+    }
+    @media(max-width:560px){
+      .wrap{width:min(100% - 32px,1120px)}.nav{height:68px}.brand{font-size:1.25rem}.nav .button{padding:10px 13px;font-size:.78rem}.hero{padding:72px 0 58px}.hero-copy{font-size:1rem}.proofbar{grid-template-columns:1fr}.proof{padding:17px 20px}section{padding:68px 0}.section-head{gap:20px}.project-shot{min-height:200px}.project-info{padding:26px}.process{grid-template-columns:1fr}.step{border-right:0}.contact-box{padding:27px}.float-wa{width:52px;height:52px;right:15px;bottom:15px}
+    }
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="interacciones.js" defer></script>
+</head>
+<body>
+  <a href="#contenido" class="skip">Saltar al contenido</a>
+  <header>
+    <div class="wrap nav">
+      <a href="#inicio" class="brand" aria-label="OwnSpot Studio, inicio"><span class="brand-dot" aria-hidden="true"></span>OwnSpot <small>STUDIO</small></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">☰</button>
+      <nav id="menu-principal" class="nav-links" aria-label="Navegación principal">
+        <a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#contacto">Contacto</a>
+      </nav>
+      <a href="#contacto" class="button button-primary">Cotizar proyecto</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <canvas id="connection-field" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <div class="hero-grid"><div><span class="eyebrow">Diseño web para Ecuador</span>
+        <h1><span class="headline-line"><span>Tu negocio merece</span></span><span class="headline-line"><span>su propio lugar.</span></span><span class="headline-line accent"><span>Hagámoslo digital.</span></span></h1>
+        <p class="hero-copy">Una página que se sienta tan profesional como tu trabajo. Mostramos lo que haces y facilitamos que tus clientes te escriban, pidan una cotización o reserven desde su celular.</p>
+        <div class="hero-actions">
+          <a href="#contacto" class="button button-primary">Hablemos de tu web ↗</a>
+          <a href="#proyectos" class="button button-outline">Ver proyectos</a>
+        </div>
+        <p class="hero-location"><span class="ecuador-dot" aria-hidden="true"></span>Para negocios en Ecuador · Trato directo por WhatsApp</p></div>
+</div>
+        <div class="hero-bottom"><a class="explore" href="#proyectos">Explora nuestro trabajo <span aria-hidden="true">↓</span></a><button class="motion-toggle" type="button" aria-pressed="false" hidden>Pausar animaciones</button></div>
+        <div class="proofbar" aria-label="Ventajas principales">
+          <div class="proof"><strong>Tu identidad</strong><span>Diseño alrededor de tu negocio</span></div>
+          <div class="proof"><strong>Primero el celular</strong><span>Fácil de recorrer y de contactar</span></div>
+          <div class="proof"><strong>Hablamos claro</strong><span>Alcance y precio antes de empezar</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="section-tag">Proyectos seleccionados</span><h2>Cada negocio merece<br>su propia presencia.</h2></div>
+          <p class="section-desc">Cada página responde a un negocio distinto. Diseñamos la estructura, el estilo y las llamadas a la acción pensando en sus clientes reales.</p>
+        </div>
+        <div class="portfolio">
+          <article class="project">
+            <div class="project-shot"><img src="assets/proyecto-agroindustrial.png" alt="Página web creada para una empresa de ingeniería y construcción agroindustrial" loading="lazy" width="1902" height="885"></div>
+            <div class="project-info">
+              <span class="project-type">Web corporativa</span>
+              <h3>Ingeniería y construcción agroindustrial</h3>
+              <p>Una presencia sólida para explicar servicios técnicos y llevar al visitante directamente a solicitar una cotización.</p>
+              <ul class="project-list"><li>Mensaje comercial claro</li><li>Navegación enfocada</li><li>Contacto directo por WhatsApp</li></ul>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-shot"><img src="assets/proyecto-biocircles.png" alt="Tienda en línea creada para BioCercles y su anillo inteligente" loading="lazy" width="1895" height="906"></div>
+            <div class="project-info">
+              <span class="project-type">Tienda en línea</span>
+              <h3>BioCercles · Smart Ring</h3>
+              <p>Una página de producto con estética premium, beneficios visibles y una compra guiada para facilitar la decisión.</p>
+              <ul class="project-list"><li>Presentación de producto</li><li>Beneficios destacados</li><li>Diseño orientado a conversión</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="section-tag">Qué hacemos</span><h2>La web adecuada para tu negocio</h2></div>
+          <p class="section-desc">Para tu consultorio, restaurante, taller o tienda. Partimos de lo que tus clientes necesitan saber antes de elegirte.</p>
+        </div>
+        <div class="services">
+          <article class="service"><span class="service-num">01</span><h3>Página informativa</h3><p>Ideal para profesionales y negocios que necesitan mostrar servicios, ubicación, horarios y contacto.</p></article>
+          <article class="service"><span class="service-num">02</span><h3>Catálogo o menú</h3><p>Productos, servicios o platos bien organizados, con pedidos y consultas directas por WhatsApp.</p></article>
+          <article class="service"><span class="service-num">03</span><h3>Tienda en línea</h3><p>Tiendas con WordPress y WooCommerce, catálogo, carrito y opciones de pago según el proyecto.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <div class="wrap">
+        <div class="section-head"><div><span class="section-tag">Nuestro proceso</span><h2>De la idea a internet</h2></div><p class="section-desc">Te acompañamos de forma directa, con fechas claras y sin reuniones innecesarias.</p></div>
+        <div class="process">
+          <article class="step"><strong>01</strong><small>CONVERSAMOS</small><h3>Conocemos tu negocio</h3><p>Definimos objetivos, clientes y contenido por WhatsApp o videollamada.</p></article>
+          <article class="step"><strong>02</strong><small>DAMOS FORMA</small><h3>Diseñamos</h3><p>Construimos la estructura y el estilo usando la información real de tu empresa.</p></article>
+          <article class="step"><strong>03</strong><small>AJUSTAMOS</small><h3>Revisamos contigo</h3><p>Presentamos la página e incluimos hasta dos rondas de ajustes.</p></article>
+          <article class="step"><strong>04</strong><small>SALIMOS AL AIRE</small><h3>Publicamos</h3><p>Conectamos tu dominio, revisamos todo y te enseñamos a utilizarla.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="precios">
+      <div class="wrap">
+        <div class="section-head"><div><span class="section-tag">Precios transparentes</span><h2>Una inversión clara.<br>Una web a tu medida.</h2></div><p class="section-desc">Valores de referencia en dólares estadounidenses. Te enviamos una propuesta con lo que incluye tu página, el precio y los tiempos antes de comenzar.</p></div>
+        <div class="pricing">
+          <article class="price"><h3>Presencia</h3><div class="amount">Desde $120</div><ul><li>Una página informativa</li><li>Diseño personalizado</li><li>Botón de WhatsApp</li><li>Entrega desde 4 días</li></ul><a href="#contacto" class="button button-outline">Consultar</a></article>
+          <article class="price featured"><span class="badge">PARA MOSTRAR MÁS</span><h3>Negocio</h3><div class="amount">Desde $290</div><ul><li>Hasta 5 secciones</li><li>Menú o catálogo</li><li>Formulario + WhatsApp</li><li>SEO básico</li><li>Entrega desde 7 días</li></ul><a href="#contacto" class="button button-primary">Solicitar propuesta</a></article>
+          <article class="price"><h3>Tienda</h3><div class="amount">Desde $460</div><ul><li>WordPress + WooCommerce</li><li>Catálogo de productos</li><li>Carrito de compras</li><li>Integración de pagos</li><li>30 días de soporte</li></ul><a href="#contacto" class="button button-outline">Consultar</a></article>
+        </div>
+        <p class="price-note">Sin mensualidad de plataforma. Dominio, alojamiento y comisiones de pago se cotizan por separado.</p>
+        <p class="price-note">Precios base de desarrollo en USD. Renovaciones, impuestos aplicables y extensiones opcionales se detallan en la propuesta. Los tiempos dependen del alcance y de la entrega de contenido.</p>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <div class="wrap about">
+        <div class="about-card"><div class="about-mark">Os.</div><p>Contacto directo, decisiones rápidas y una web hecha alrededor de tu negocio.</p></div>
+        <div class="about-copy"><span class="section-tag">Quiénes somos</span><h2>Tu negocio lo conoces tú.<br>Lo construimos contigo.</h2><p>En OwnSpot Studio empezamos escuchando: qué ofreces, a quién atiendes y qué te hace diferente. Lo convertimos en una web con personalidad, información útil y un camino sencillo para contactarte. Coordinamos por WhatsApp o videollamada, estés en Quito, Guayaquil, Cuenca o cualquier lugar de Ecuador.</p></div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="wrap">B
+        <div class="contact-box">
+          <div>
+            <span class="section-tag">Hablemos</span><h2>Cuéntanos sobre tu negocio</h2>
+            <p class="section-desc">No necesitas saber de tecnología. Cuéntanos qué haces y qué te gustaría mejorar; te ayudamos a definir por dónde empezar, sin compromiso.</p>
+            <div class="contact-list">
+              <a class="contact-link" href="https://wa.me/593983841517?text=Hola%20OwnSpot%20Studio%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener"><small>WhatsApp</small>+593 98 384 1517</a>
+              <a class="contact-link" href="https://wa.me/593995034349?text=Hola%20OwnSpot%20Studio%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener"><small>WhatsApp alternativo</small>+593 99 503 4349</a>
+              <a class="contact-link" href="mailto:boaddaelian56@gmail.com"><small>Correo</small>boaddaelian56@gmail.com</a>
+            </div>
+          </div>
+          <form name="solicitud-proyecto" method="POST" action="./gracias.html" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="solicitud-proyecto">
+            <p hidden><label>No completar: <input name="bot-field"></label></p>
+            <div class="field"><label for="nombre">Tu nombre</label><input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="¿Cómo te llamas?" required></div>
+            <div class="field"><label for="negocio">Nombre del negocio</label><input id="negocio" name="negocio" type="text" placeholder="Ej. Café Central" required></div>
+            <div class="field"><label for="contacto-cliente">WhatsApp o correo</label><input id="contacto-cliente" name="contacto" type="text" placeholder="¿Dónde podemos responderte?" required></div>
+            <div class="field"><label for="tipo">Qué necesitas</label><select id="tipo" name="tipo-de-proyecto" required><option value="">Selecciona una opción</option><option>Página informativa</option><option>Catálogo o menú</option><option>Tienda en línea</option><option>No estoy seguro todavía</option></select></div>
+            <div class="field"><label for="mensaje">Cuéntanos un poco más</label><textarea id="mensaje" name="mensaje" placeholder="Qué vendes y qué te gustaría conseguir con tu página"></textarea></div>
+            <button class="button button-primary" type="submit" style="width:100%">Enviar solicitud →</button>
+            <p id="form-status" role="status" class="form-note"></p><p class="form-note">Usaremos estos datos únicamente para responder a tu solicitud.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-row"><span>© 2026 OwnSpot Studio</span><span>Páginas web para negocios en Ecuador</span></div></footer>
+  <a class="float-wa" href="https://wa.me/593983841517?text=Hola%20OwnSpot%20Studio%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener" aria-label="Escribir a OwnSpot Studio por WhatsApp">
+    <svg viewBox="0 0 32 32" role="img" aria-hidden="true">
+      <path d="M16.04 3A12.88 12.88 0 0 0 5.12 22.72L3.4 29l6.43-1.69A12.96 12.96 0 1 0 16.04 3Zm0 23.72a10.72 10.72 0 0 1-5.47-1.5l-.39-.23-3.82 1 1.02-3.72-.25-.38a10.73 10.73 0 1 1 8.91 4.83Zm5.88-8.03c-.32-.16-1.9-.94-2.2-1.05-.29-.11-.5-.16-.71.16-.22.32-.83 1.05-1.02 1.27-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6a9.7 9.7 0 0 1-1.79-2.23c-.19-.32-.02-.5.14-.66.15-.14.32-.37.49-.56.16-.19.21-.32.32-.54.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.56.08-.85.4-.3.32-1.12 1.1-1.12 2.67s1.15 3.1 1.31 3.31c.16.22 2.26 3.45 5.47 4.84.76.33 1.36.53 1.83.67.77.24 1.46.21 2.01.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.14-.3-.22-.62-.38Z"/>
+    </svg>
+  </a>
+</body>
+</html>

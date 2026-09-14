@@ -1,0 +1,31 @@
+OWNSPOT STUDIO — REDISEÑO CON MOVIMIENTO
+
+Portada con puntos conectados animados y entrada escalonada del titular.
+Los proyectos aparecen únicamente en el portafolio, sin indicar un total.
+El botón Pausar animaciones detiene el movimiento; también se respeta la
+preferencia de movimiento reducido del dispositivo. El fondo deja de animarse
+cuando no está visible para reducir consumo de recursos.
+
+Abre index.html para ver la página. Conserva juntos todos los archivos.
+
+index.html: contenido de la página y configuración del formulario.
+estilo.css: nuevo diseño, fondos, adaptación a celulares y animaciones.
+interacciones.js: menú móvil, animaciones de aparición y aviso del formulario local.
+assets: las imágenes de proyectos seleccionados. No cambies sus nombres.
+gracias.html: página de confirmación después de enviar el formulario en Netlify.
+
+PARA NETLIFY
+Descomprime el ZIP y publica la carpeta completa, con index.html en la raíz.
+Activa la detección de formularios en Netlify y vuelve a desplegar. Configura
+las notificaciones de solicitudes en tu cuenta y realiza una prueba real.
+El formulario no envía correos por abrir el archivo local. WhatsApp sí enlaza
+a los mismos números anteriores. No se ha publicado ni enviado ninguna solicitud.
+
+ANTES DE PUBLICAR
+OwnSpot Studio es el nombre elegido. Dominio propuesto: ownspotstudio.com.
+El dominio no se ha comprado ni conectado. Confirma su disponibilidad al
+registrarlo. No se han verificado derechos de marca ni nombres en redes.
+Se conservaron tus precios, correo y números anteriores: revísalos.
+Confirma condiciones, impuestos, soporte y alcances de cada servicio.
+Google Fonts requiere internet; sin conexión se usan las fuentes alternativas.
+La carpeta original northlane-mejorada permanece intacta.
